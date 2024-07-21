@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://5trw73pb0a67"]
+
+[ext_resource type="FontFile" uid="uid://c62ue8ntk7vs5" path="res://kenney_space-shooter-redux/Bonus/kenvector_future_thin.ttf" id="1_15g5l"]
+[ext_resource type="Script" path="res://scenes/game_over.gd" id="1_owg5p"]
+[ext_resource type="PackedScene" uid="uid://cub7pnxru76c7" path="res://scenes/level.tscn" id="2_e7lor"]
+[ext_resource type="FontFile" uid="uid://blsp4a5ud1jfl" path="res://kenney_space-shooter-redux/Bonus/kenvector_future.ttf" id="2_ypxii"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_owg5p")
+level_scene = ExtResource("2_e7lor")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.227451, 0.180392, 0.247059, 1)
+metadata/_edit_lock_ = true
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_15g5l")
+theme_override_font_sizes/font_size = 60
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_15g5l")
+theme_override_font_sizes/font_size = 25
+text = "SCORE:"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -116.0
+offset_top = -40.0
+offset_right = 116.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ypxii")
+theme_override_font_sizes/font_size = 20
+text = "PRESS SPACE TO START AGAIN"
